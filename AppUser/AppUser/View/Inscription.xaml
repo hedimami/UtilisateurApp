@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="AppUser.View.Inscription"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppUser.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBox Name="txtnom" PlaceholderText="nom" FontSize="20"  Margin="10" GotFocus="txtnom_GotFocus" LostFocus="txtnom_LostFocus" />
+            <TextBox Name="txtprenom" PlaceholderText="prenom" FontSize="20"  Margin="10" LostFocus="txtprenom_LostFocus" GotFocus="txtprenom_GotFocus" />
+            <TextBlock Text="date de naissance" FontSize="18" Margin="10"/>
+            <DatePicker Name="txtdate" Margin="10,0,10,10" Tapped="txtdate_Tapped"  />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="sexe" Margin="10" FontSize="18"/>
+                <RadioButton Name="r1" Content="Homme" Margin="10"/>
+                <RadioButton Name="r2" Content="Femme" Margin="10"/>
+            </StackPanel>
+            <TextBox Name="txttel" PlaceholderText="Tel" FontSize="20"  Margin="10" GotFocus="txttel_GotFocus" LostFocus="txttel_LostFocus"  />
+            <TextBox Name="txtemail" PlaceholderText="Email" FontSize="20"  Margin="10" LostFocus="txtemail_LostFocus" GotFocus="txtemail_GotFocus" />
+            <PasswordBox Name="txtpw" PlaceholderText="mot de passe" FontSize="20"  Margin="10" LostFocus="txtpw_LostFocus" GotFocus="txtpw_GotFocus" />
+            <PasswordBox Name="txtpwc" PlaceholderText="Confirmer mot de passe" FontSize="20"  Margin="10" GotFocus="txtpwc_GotFocus" LostFocus="txtpwc_LostFocus" />
+        </StackPanel>
+    </Grid>
+</Page>
