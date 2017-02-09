@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="AppUser.View.Connexion"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppUser.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Name="txtconnexion" Text="Connexion" HorizontalAlignment="Center"/>
+            <TextBox Name="txtemail" PlaceholderText="email" Margin="10" FontSize="20" GotFocus="txtemail_GotFocus" Drop="txtemail_Drop"/>
+            <PasswordBox Name="txtmotdepasse" PlaceholderText="mot de passe" Margin="10" FontSize="20"/>
+            <Button Name="btnconnexion" Content="Se connecter" Click="btnconnexion_Click" Margin="20" FontSize="20" />
+        </StackPanel>
+    </Grid>
+</Page>

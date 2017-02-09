@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="AppUser.View.VisitView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppUser.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot>
+            <PivotItem Header="Visit">
+                <Grid>
+                    <StackPanel >
+                        <TextBlock Margin="10" Text="Date arrivé"/>
+                        <DatePicker Margin="10" Name="txtdatearrive" />
+                        <TextBlock Margin="10" Text="Date fin"/>
+                        <DatePicker Margin="10" Name="txtdatefin" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Name="txtbudget" Margin="10" PlaceholderText="Budget"/>
+                            <ComboBox Name="txtdevise" Margin="10" PlaceholderText="devise"/>
+                        </StackPanel>
+                        <TextBlock Name="txtdt" Text="en dinar: " Margin="10"/>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Accompagnant">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="43*"/>
+                        <RowDefinition Height="253*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Name="txtnomacc" PlaceholderText="nom accompagnant" Margin="10" />
+                            <ComboBox Name="txtage" PlaceholderText="age" Margin="10"/>
+                                <ComboBox Name="txtsexe" PlaceholderText="sexe" Margin="10"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <ListView Name="listacc">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding nom}" Margin="10"/>
+                                            <TextBlock Text="{Binding age}" Margin="10"/>
+                                            <TextBlock Text="{Binding sexe}" Margin="10"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="Accept" Label="valider" Click="AppBarButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
